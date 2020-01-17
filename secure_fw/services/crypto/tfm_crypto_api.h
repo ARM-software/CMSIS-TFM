@@ -45,6 +45,29 @@ enum tfm_crypto_operation_type {
 };
 
 /**
+ * \brief Core key attributes struct as seen by the application, with
+ *        psa_app_key_id_t as the key ID type.
+ */
+typedef struct {
+    psa_key_type_t type;
+    psa_key_lifetime_t lifetime;
+    psa_app_key_id_t id; /* Application key ID */
+    psa_key_policy_t policy;
+    psa_key_bits_t bits;
+    psa_key_attributes_flag_t flags;
+} psa_app_core_key_attributes_t;
+
+/**
+ * \brief Key attributes struct as seen by the application, with
+ *        psa_app_core_key_attributes_t as the core key attributes type.
+ */
+typedef struct {
+    psa_app_core_key_attributes_t core; /* Application core key attributes */
+    void *domain_parameters;
+    size_t domain_parameters_size;
+} psa_app_key_attributes_t;
+
+/**
  * \brief Initialise the service
  *
  * \return Return values as described in \ref psa_status_t
@@ -66,6 +89,32 @@ psa_status_t tfm_crypto_init_alloc(void);
  * \return Return values as described in \ref psa_status_t
  */
 psa_status_t tfm_crypto_get_caller_id(int32_t *id);
+
+/**
+ * \brief Gets key attributes from app key attributes.
+ *
+ * \param[in]  app_attributes  App key attributes
+ * \param[in]  client_id       Partition ID of the calling app
+ * \param[out] attributes      Key attributes
+ *
+ * \return Return values as described in \ref psa_status_t
+ */
+psa_status_t tfm_crypto_key_attributes_from_app(
+                                 const psa_app_key_attributes_t *app_attributes,
+                                 int32_t client_id,
+                                 psa_key_attributes_t *attributes);
+
+/**
+ * \brief Converts key attributes to app key attributes.
+ *
+ * \param[in]  attributes      Key attributes
+ * \param[out] app_attributes  App key attributes
+ *
+ * \return Return values as described in \ref psa_status_t
+ */
+psa_status_t tfm_crypto_key_attributes_to_app(
+                                      const psa_key_attributes_t *attributes,
+                                      psa_app_key_attributes_t *app_attributes);
 
 /**
  * \brief Checks that the requested handle belongs to the requesting
