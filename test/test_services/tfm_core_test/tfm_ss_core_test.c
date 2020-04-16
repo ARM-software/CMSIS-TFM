@@ -20,6 +20,7 @@
 #ifdef TFM_PSA_API
 #include "psa_manifest/sid.h"
 #endif
+#include "log/tfm_log.h"
 
 static int32_t partition_init_done;
 

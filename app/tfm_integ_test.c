@@ -28,6 +28,7 @@
 #ifdef CORE_TEST_INTERACTIVE
 #include "test/test_services/tfm_core_test/core_test_defs.h"
 #include "tfm_veneers.h"
+#include "log/tfm_log.h"
 
 #define TRY_SFN(fn, ...) \
     do { \
