@@ -89,6 +89,7 @@ psa_status_t tfm_its_init(void)
     }
 #endif /* ITS_CREATE_FLASH_LAYOUT */
 
+#ifdef TFM_PARTITION_SECURE_STORAGE
     /* Initialise the SST context */
     status = its_flash_fs_prepare(&fs_ctx_sst,
                                   its_flash_get_info(ITS_FLASH_ID_EXTERNAL));
@@ -118,6 +119,8 @@ psa_status_t tfm_its_init(void)
                                      its_flash_get_info(ITS_FLASH_ID_EXTERNAL));
     }
 #endif /* SST_CREATE_FLASH_LAYOUT */
+
+#endif /* TFM_PARTITION_SECURE_STORAGE */
 
     return status;
 }
