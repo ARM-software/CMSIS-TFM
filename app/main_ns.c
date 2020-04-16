@@ -59,11 +59,9 @@ extern void * const osRtxUserSVC[1+USER_SVC_COUNT];
  * \brief List of RTOS thread attributes
  */
 #if defined(TEST_FRAMEWORK_NS) || defined(PSA_API_TEST_NS)
-static uint64_t test_app_stack[(4u * 1024u) / (sizeof(uint64_t))]; /* 4KB */
 static const osThreadAttr_t thread_attr = {
     .name = "test_thread",
-    .stack_mem = test_app_stack,
-    .stack_size = sizeof(test_app_stack),
+    .stack_size = 4096U,
 };
 #endif
 
