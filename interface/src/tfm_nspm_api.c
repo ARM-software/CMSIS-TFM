@@ -13,6 +13,8 @@
 #include "cmsis_os2.h"
 #include "tfm_ns_svc.h"
 
+#ifdef TFM_NS_CLIENT_IDENTIFICATION
+
 /* Translation table pair between OS threads and client IDs */
 struct thread_test_clientid_pair {
     const char* t_name;     /*!< Task/Thread name */
@@ -79,4 +81,4 @@ uint32_t tfm_nspm_register_client_id(void)
     return tfm_nspm_svc_register_client(client_id);
 }
 
-
+#endif

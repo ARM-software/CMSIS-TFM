@@ -9,6 +9,8 @@
 #include "tfm_api.h"
 #include "tfm_ns_svc.h"
 
+#ifdef TFM_NS_CLIENT_IDENTIFICATION
+
 /* SVC function implementations */
 uint32_t tfm_nspm_svc_register_client_id(uint32_t client_id)
 {
@@ -18,3 +20,5 @@ uint32_t tfm_nspm_svc_register_client_id(uint32_t client_id)
 
     return 0;
 }
+
+#endif
