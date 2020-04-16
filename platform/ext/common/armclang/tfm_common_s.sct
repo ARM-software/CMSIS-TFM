@@ -33,6 +33,8 @@ LR_CODE S_CODE_START {
         tfm_spm_services.o (+RO)
         platform_retarget_dev.o (+RO)
         device_definition.o (+RO)
+        psa_service.o (+RO)
+        psa_client.o (+RO)
         *(SFN)
         *armlib*
         *libtfmsprt.a (+RO)
