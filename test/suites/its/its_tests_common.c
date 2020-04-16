@@ -12,7 +12,10 @@
 #else
 #include "tfm_memory_utils.h"
 #endif
+
+#if DOMAIN_NS == 0
 #include "flash_layout.h"
+#endif
 
 #define TEST_019_CYCLES    3U
 
