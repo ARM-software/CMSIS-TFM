@@ -1,0 +1,222 @@
+/*
+ * Copyright (c) 2019, Arm Limited. All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ */
+
+#ifndef __TFM_CONFIG_RTE_H__
+#define __TFM_CONFIG_RTE_H__
+
+#include "RTE_Components.h"
+
+#ifdef  TFM_LVL
+#if    (TFM_LVL != 1)
+#ifndef CONFIG_TFM_ENABLE_MEMORY_PROTECT
+#define CONFIG_TFM_ENABLE_MEMORY_PROTECT
+#endif
+#endif
+#endif
+
+#ifdef  RTE_TFM_CORE_IPC
+#define TFM_PSA_API
+#endif
+
+#ifdef  RTE_TFM_SS_SST
+#define TFM_PARTITION_SECURE_STORAGE
+#ifdef  RTE_TFM_SS_SST_ENCRYPTED
+#define SST_ENCRYPTION
+#endif
+#endif
+
+#ifdef  RTE_TFM_SS_ITS
+#define TFM_PARTITION_INTERNAL_TRUSTED_STORAGE
+#endif
+
+#ifdef  RTE_TFM_SS_AUDIT_LOGGING
+#define TFM_PARTITION_AUDIT_LOG
+#endif
+
+#ifdef  RTE_TFM_SS_CRYPTO
+#define TFM_PARTITION_CRYPTO
+#endif
+
+#ifdef  RTE_TFM_SS_PLATFORM
+#define TFM_PARTITION_PLATFORM
+#endif
+
+#ifdef  RTE_TFM_SS_INITIAL_ATTESTATION
+#define TFM_PARTITION_INITIAL_ATTESTATION
+#endif
+
+#ifdef  RTE_TFM_TS_CORE
+#define TFM_PARTITION_TEST_CORE
+#define CORE_TEST_INTERACTIVE
+#endif
+
+#ifdef  RTE_TFM_TS_IPC
+#define TFM_PARTITION_TEST_CORE_IPC
+#endif
+
+#ifdef  RTE_TFM_TS_SECURE_CLIENT
+#define TFM_PARTITION_TEST_SECURE_SERVICES
+#endif
+
+#ifdef  RTE_TFM_TS_SST
+#define TFM_PARTITION_TEST_SST
+#endif
+
+#ifdef  RTE_TFM_TS_IRQ
+#define TFM_ENABLE_IRQ_TEST
+#endif
+
+#if (defined(RTE_TFM_TEST_SST_S)         || \
+     defined(RTE_TFM_TEST_ITS_S)         || \
+     defined(RTE_TFM_TEST_AUDIT_S)       || \
+     defined(RTE_TFM_TEST_CRYPTO_S)      || \
+     defined(RTE_TFM_TEST_ATTESTATION_S) || \
+     defined(RTE_TFM_TEST_PLATFORM_S)    || \
+     defined(RTE_TFM_TEST_IPC_S))
+#define SERVICES_TEST_S
+#endif
+
+#ifdef  RTE_TFM_TEST_SST_S
+#define ENABLE_SECURE_STORAGE_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_ITS_S
+#define ENABLE_INTERNAL_TRUSTED_STORAGE_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_AUDIT_S
+#define ENABLE_AUDIT_LOGGING_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_CRYPTO_S
+#define ENABLE_CRYPTO_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_ATTESTATION_S
+#define ENABLE_ATTESTATION_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_PLATFORM_S
+#define ENABLE_PLATFORM_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_IPC_S
+#define ENABLE_IPC_TEST
+#endif
+
+#ifdef  RTE_TFM_API_IPC
+#define TFM_PSA_API
+#ifdef  TFM_PARTITION_AUDIT_LOG
+#error  "Audit Logging API not supported with IPC!"
+#endif
+#endif
+
+#ifdef  RTE_TFM_TEST_PSA_API_NS
+#define PSA_API_TEST_NS
+#endif
+
+#ifdef  RTE_TFM_TEST_FRAMEWORK_NS
+#define TEST_FRAMEWORK_NS
+#endif
+
+#if (defined(RTE_TFM_TEST_SST_NS)         || \
+     defined(RTE_TFM_TEST_ITS_NS)         || \
+     defined(RTE_TFM_TEST_AUDIT_NS)       || \
+     defined(RTE_TFM_TEST_CRYPTO_NS)      || \
+     defined(RTE_TFM_TEST_ATTESTATION_NS) || \
+     defined(RTE_TFM_TEST_PLATFORM_NS)    || \
+     defined(RTE_TFM_TEST_QCBOR_NS)       || \
+     defined(RTE_TFM_TEST_T_COSE_NS))
+#define SERVICES_TEST_NS
+#endif
+
+#ifdef  RTE_TFM_TEST_SST_NS
+#define ENABLE_SECURE_STORAGE_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_ITS_NS
+#define ENABLE_INTERNAL_TRUSTED_STORAGE_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_AUDIT_NS
+#define ENABLE_AUDIT_LOGGING_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_CRYPTO_NS
+#define ENABLE_CRYPTO_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_ATTESTATION_NS
+#define ENABLE_ATTESTATION_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_PLATFORM_NS
+#define ENABLE_PLATFORM_SERVICE_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_QCBOR_NS
+#define ENABLE_QCBOR_TESTS
+#endif
+
+#ifdef  RTE_TFM_TEST_T_COSE_NS
+#define ENABLE_T_COSE_TESTS
+#endif
+
+#if defined(RTE_TFM_TEST_CORE_P_NS) || defined(RTE_TFM_TEST_CORE_I_NS)
+#define TFM_PARTITION_TEST_CORE
+#endif
+
+#ifdef  RTE_TFM_TEST_CORE_P_NS
+#define CORE_TEST_POSITIVE
+#endif
+
+#ifdef  RTE_TFM_TEST_CORE_I_NS
+#define CORE_TEST_INTERACTIVE
+#endif
+
+#ifdef  RTE_TFM_TEST_IPC_NS
+#define TFM_PARTITION_TEST_CORE_IPC
+#define ENABLE_IPC_TEST
+#endif
+
+#ifdef  RTE_TFM_TEST_SECURE_CLIENT_NS
+#define TEST_FRAMEWORK_S
+#define TFM_PARTITION_TEST_SECURE_SERVICES
+#endif
+
+#ifdef  RTE_TFM_LIBRARY_T_COSE
+#define T_COSE_USE_PSA_CRYPTO
+#define T_COSE_DISABLE_ES384
+#define T_COSE_DISABLE_ES512
+#define T_COSE_DISABLE_CONTENT_TYPE
+#define T_COSE_DISABLE_SIGN_VERIFY_TESTS
+#define T_COSE_USE_PSA_CRYPTO_FROM_TFM
+#endif
+
+#ifdef  BL2
+#ifndef MCUBOOT_IMAGE_NUMBER
+#define MCUBOOT_IMAGE_NUMBER 2
+#endif
+#ifndef MCUBOOT_SIGN_RSA_LEN
+#define MCUBOOT_SIGN_RSA_LEN 3072
+#endif
+#endif
+
+#define _DRIVER_USART_(n) Driver_USART##n
+#define _DRIVER_USART(n) _DRIVER_USART_(n)
+
+#define TFM_DRIVER_STDIO _DRIVER_USART(STDIO_TFM_USART_DRV_NUM)
+#define  NS_DRIVER_STDIO _DRIVER_USART(STDIO_NS_USART_DRV_NUM)
+
+#define _DRIVER_FLASH_(n) Driver_FLASH##n
+#define _DRIVER_FLASH(n) _DRIVER_FLASH_(n)
+
+#define FLASH_DEV_NAME     _DRIVER_FLASH(FLASH_DRV_NUM)
+#define SST_FLASH_DEV_NAME _DRIVER_FLASH(SST_FLASH_DRV_NUM)
+#define ITS_FLASH_DEV_NAME _DRIVER_FLASH(ITS_FLASH_DRV_NUM)
+
+#endif /* __TFM_CONFIG_RTE_H__ */
