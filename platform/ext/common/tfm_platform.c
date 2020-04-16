@@ -5,7 +5,6 @@
  *
  */
 
-#include "target_cfg.h"
 #include "platform/include/tfm_spm_hal.h"
 #include "uart_stdout.h"
 

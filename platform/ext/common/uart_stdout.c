@@ -20,8 +20,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "Driver_USART.h"
-#include "target_cfg.h"
-#include "device_cfg.h"
 
 #define ASSERT_HIGH(X)  assert(X == ARM_DRIVER_OK)
 

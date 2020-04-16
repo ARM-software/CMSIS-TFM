@@ -5,8 +5,7 @@
  *
  */
 
-#include "target_cfg.h"
-#include "cmsis.h"
+#include "cmsis_compiler.h"
 #include "Driver_Flash.h"
 #include "flash_layout.h"
 

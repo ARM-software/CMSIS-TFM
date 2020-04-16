@@ -16,10 +16,7 @@
 #ifdef PSA_API_TEST_NS
 #include "psa_api_test.h"
 #endif
-#include "target_cfg.h"
-#include "tfm_plat_ns.h"
 #include "Driver_USART.h"
-#include "device_cfg.h"
 #ifdef TFM_MULTI_CORE_TOPOLOGY
 #include "tfm_multi_core_api.h"
 #include "tfm_ns_mailbox.h"
