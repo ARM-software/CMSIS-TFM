@@ -1,0 +1,17 @@
+body {
+	counter-reset: figCount;
+}
+
+figure {
+	text-align: center;
+}
+.Imagecount:before {
+	counter-increment: figCount;
+	content: "Fig " counter(figCount);
+}
+
+.Image:before {
+	font-weight: bold;
+	content: "Figure " counter(figCount);
+}
+

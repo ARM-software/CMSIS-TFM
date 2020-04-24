@@ -12,7 +12,7 @@
   <url>http://www.keil.com/pack/</url>
 
   <releases>
-    <release version="2.0.0">
+    <release version="2.0.0-rc0">
       Based on https://git.trustedfirmware.org/trusted-firmware-m.git repository tag: TF-Mv1.0
       Added support for persistent keys:
         https://review.trustedfirmware.org/c/trusted-firmware-m/+/3252
@@ -68,8 +68,8 @@
   </keywords>
 
   <taxonomy>
-    <description Cclass="TFM">Trusted Firmware-M (TF-M)</description>
-    <description Cclass="TFM Platform">Trusted Firmware-M (TF-M) Platform</description>
+    <description Cclass="TFM" doc="manuals/index.html">Trusted Firmware-M (TF-M)</description>
+    <description Cclass="TFM Platform" doc="manuals/platform.html">Trusted Firmware-M (TF-M) Platform</description>
   </taxonomy>
 
   <apis>

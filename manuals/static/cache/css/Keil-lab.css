@@ -1,0 +1,114 @@
+.boxx{
+	font-size: 70%;
+	word-break:keep-all;
+	font-family:Arial;
+	border: 1px solid;
+	padding: .3em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	height:1.2em;
+	background: #FFF;	
+	text-align:center;
+}
+
+.imagess{
+	display: inline-block;
+	height:1em
+	max-width:194px;
+
+} 
+
+.buttonss{	
+	font-size: 70%;
+	word-break:keep-all;
+	font-family:Arial;
+	border: 1px solid;
+	padding: .3em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	height:1.2em;
+	border-right: 2px solid black; 
+	background: #FFF;	
+	border-radius: 3px; 
+	text-align:center;
+	box-sizing: border-box;
+	
+}
+
+.itemm{	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+	line-height:1;
+	white-space:nowrap;
+	display:inline-block;
+	position:relative;5em
+	margin-top: -.10em;
+}
+
+
+.imgr{	padding-bottom: 0.2em;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
+}
+
+
+p.tipp{color:#0084A9}
+
+
+
+.tabss{	
+	font-size: 70%;
+	word-break:keep-all;
+	font-family:Arial;
+	border: 1px solid;
+	padding: .3em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	height:1.2em;
+	border-right: 2px solid black; 
+	background: #FFF;	
+	border-top-left-radius: .25em .5em;
+	border-top-right-radius: .25em .5em;
+	text-align:center;
+	box-sizing: border-box;
+	
+}
+
+.wizards{	
+	font-size: 70%;
+	word-break:keep-all;
+	font-family:Arial;
+	border: 1px solid;
+	padding: .3em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width:3em;
+	height:1.2em;
+	border-right: 2px solid black; 
+	background: #FFF;	
+	border-bottom-left-radius: 10px 30px;
+	border-bottom-right-radius: 10px 30px;
+	text-align:center;
+	box-sizing: border-box;
+	
+}
+
+strong {
+	font-weight: bold;
+} 
+
+.border6{
+	-webkit-order-top-right-radius:24px;
+	-webkit-order-top-left-radius:24px;
+	border-tp-right-radius:24px;
+	border-tp-left-radius:24px
+}
+
+h2:before, ul:before { display: block; content: " "; margin-top: -285px; height: 285px; visibility: hidden; }
+		#top { position: relative; z-index: 1000; /* Stay on top */ }
+h3:before, ul:before { display: block; content: " "; margin-top: -80px; height: 80px; visibility: hidden; }
+		#top { position: relative; z-index: 1000; /* Stay on top */ }		
+
