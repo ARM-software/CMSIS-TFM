@@ -17,7 +17,7 @@
 if [ `uname -s` = "Linux" ]
   then
   CMSIS_PACK_PATH="/home/$USER/.arm/Packs/ARM/CMSIS/5.7.0/"
-  PATH_TO_ADD="$CMSIS_PACK_PATH/CMSIS/Utilities/Linux-gcc-4.8.3/"
+  PATH_TO_ADD="$CMSIS_PACK_PATH/CMSIS/Utilities/Linux64/"
 else
   CMSIS_PACK_PATH="/C/ARM/PACK/ARM/CMSIS/5.7.0"
   PATH_TO_ADD="/C/Program Files/7-Zip/:$CMSIS_PACK_PATH/CMSIS/Utilities/Win32/"
