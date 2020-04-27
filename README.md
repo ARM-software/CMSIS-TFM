@@ -1,7 +1,7 @@
 # CMSIS-TFM
 
 This GitHub repository contains a fork of https://git.trustedfirmware.org/trusted-firmware-m.git
-and adds the infra-structure to frame is as CMSIS-Pack
+and adds the infra-structure to frame is as CMSIS-Pack.
 
 
 ### Issues and Labels
