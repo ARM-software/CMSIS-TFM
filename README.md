@@ -1,8 +1,9 @@
 # CMSIS-TFM
 
-This GitHub repository contains a fork of https://git.trustedfirmware.org/trusted-firmware-m.git
-and adds the infra-structure to frame is as CMSIS-Pack.
+This GitHub repository contains a mirror of https://git.trustedfirmware.org/trusted-firmware-m.git
+and adds the infrastructure to wrap it as a [CMSIS-Pack](https://arm-software.github.io/CMSIS_5/Pack/html/index.html).
 
+The development for TrustedFirmware-M is done on the upstream repository. This downstream project adds patches, additions and example projects to use TF-M in a CMSIS-Pack enabled build system.
 
 ### Issues and Labels
 
