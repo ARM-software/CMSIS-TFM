@@ -10,9 +10,10 @@
   <vendor>ARM</vendor>
   <!-- <license>license.rst</license> -->
   <url>http://www.keil.com/pack/</url>
+  <repository type="git">https://github.com/ARM-software/CMSIS-TFM.git</repository>
 
   <releases>
-    <release version="2.0.0-rc0">
+    <release version="2.0.0" date="2020-06-05">
       Based on https://git.trustedfirmware.org/trusted-firmware-m.git repository tag: TF-Mv1.0
       Added support for persistent keys:
         https://review.trustedfirmware.org/c/trusted-firmware-m/+/3252
