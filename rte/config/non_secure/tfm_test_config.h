@@ -27,7 +27,7 @@
 #define DEFAULT_UART_BAUDRATE   115200U
 
 //   <o>SST Maximum Asset Size
-#define SST_MAX_ASSET_SIZE      512
+#define SST_MAX_ASSET_SIZE      2048
 
 //   <o>ITS Maximum Asset Size
 #define ITS_MAX_ASSET_SIZE      512
